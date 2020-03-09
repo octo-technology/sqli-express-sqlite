@@ -1,0 +1,8 @@
+{
+  "name": "Hands-on Express SQLi",
+  "description": "This application is a demonstration prototype just to show how to perform SQLi attacks.",
+  "repository": "https://github.com/0xdbe/Hands-on-Express-SQLi",
+  "keywords": ["node", "express", "sqli"]
+} 
+
+
