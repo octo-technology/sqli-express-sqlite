@@ -1,4 +1,4 @@
-# Hands-on Express SQLi
+# SQL injection with Express and sqlite
 
 This application is a demonstration prototype just to show how to perform SQLi attack.
 
@@ -6,7 +6,7 @@ This application is a demonstration prototype just to show how to perform SQLi a
 
 ### Deploy on heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/0xdbe/Hands-on-Express-SQLi)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/0xdbe-appsec/sqli-express-sqlite)
 
 ### Deploy on your host
 
@@ -50,4 +50,8 @@ Open http://localhost:3000/ and log in with:
 SELECT name FROM user where username = 'admin' --' and password = 'a'
 ```
 
-You are now log in as "Admin",
+You are now log in as "Admin"
+
+### Fix it
+
+use prepared statement
