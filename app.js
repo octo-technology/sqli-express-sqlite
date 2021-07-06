@@ -104,13 +104,14 @@ app.post('/login', (req, res) => {
     res.redirect("/account");
   }else{
 
-    let username = req.body.username;
-    let password = req.body.password;
-    let query = "SELECT name FROM user where username = '" + username + "' and password = '" + password + "'";
+    let data = {
+      $username: req.body.username,
+      $password: req.body.password
+    }
 
-    console.log('query: ' + query);
+    let stmt = "SELECT name FROM user where username = $username and password = $password";
 
-    db.get(query , function(err, row) {
+    db.get(stmt, data, function(err, row) {
 
       if(err) {
         console.log('ERROR', err);
