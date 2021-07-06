@@ -17,11 +17,11 @@ const app = express();
 
 // Cookie settings for CSRF hands-on
 const cookieConfig = {
-  path: '/', 
+  path: '/',
   httpOnly: true,
   secure: false,
   maxAge: 600000,
-  sameSite: 'none'
+  sameSite: 'strict'
 };
 
 // Session settings
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
 
   // Get current session
   let session = req.session;
-  
+
   if(session.username){
     // User already log in
     res.redirect("/account");
@@ -69,8 +69,8 @@ app.get('/account', (req, res) => {
 
   // Get current session
   let session = req.session;
-  
-  if(session.username){  
+
+  if(session.username){
     let content = viewAccount({name: session.username});
     res.send(content);
   }else{
@@ -81,10 +81,10 @@ app.get('/account', (req, res) => {
 
 // Login endpoint
 app.get('/login', (req, res) => {
-   
+
   // Get current session
   let session = req.session;
-  
+
   if(session.username){
     // User already log in
     res.redirect("/account");
@@ -99,7 +99,7 @@ app.post('/login', (req, res) => {
 
   // Get current session
   let session = req.session;
-  
+
   if(session.username){
     res.redirect("/account");
   }else{
@@ -107,9 +107,9 @@ app.post('/login', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let query = "SELECT name FROM user where username = '" + username + "' and password = '" + password + "'";
-    
+
     console.log('query: ' + query);
-    
+
     db.get(query , function(err, row) {
 
       if(err) {
@@ -126,11 +126,11 @@ app.post('/login', (req, res) => {
         session.username = row.name;
         res.redirect("/account");
       }
-      
+
     });
-    
+
   }
-  
+
 });
 
 // Logout endpoint
