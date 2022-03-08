@@ -2,13 +2,7 @@
 
 This application is a demonstration prototype just to show how to perform SQLi attack.
 
-## Setting-up
-
-### Deploy on heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/0xdbe-appsec/sqli-express-sqlite)
-
-### Deploy on your host
+## Install
 
 * Install nodejs
 
