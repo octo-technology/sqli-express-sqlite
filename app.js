@@ -140,4 +140,4 @@ app.get('/logout', (req, res) => {
 });
 
 // Start Application
-app.listen(PORT, '0.0.0.0', () => console.log('app listening on 3000'));
+app.listen(PORT, '0.0.0.0', () => console.log(`app listening on ${PORT}`));
