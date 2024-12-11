@@ -47,8 +47,8 @@ db.serialize(function() {
 });
 
 // Build pug template
-const viewAccount = pug.compileFile('view/account.pug');
-const viewLogin = pug.compileFile('view/login.pug');
+const viewAccount = pug.compileFile(path.join(__dirname,'view','account.pug'));
+const viewLogin = pug.compileFile(path.join(__dirname,'view','login.pug'));
 
 app.get('/', (req, res) => {
 
